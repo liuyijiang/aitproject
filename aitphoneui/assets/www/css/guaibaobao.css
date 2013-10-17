@@ -1,0 +1,10 @@
+.guaibaobao-navbar-default {
+    background-color: #008DB2;
+    border-color:  #00B5E5;
+}
+
+a:focus,input:focus{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-user-modify:read-write-plaintext-only;
+}
+
