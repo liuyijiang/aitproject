@@ -14,8 +14,15 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
- 
+  
 	<dependencies> 
+
+  <dependency>
+			<groupId>ait</groupId> 
+			<artifactId>ait-mongodb-database</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -24,11 +31,12 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
+		<dependency> 
 			<groupId>ati</groupId>
 			<artifactId>org.springframework.web</artifactId>
 			<version>3.1.0.RELEASE</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>ati</groupId>
 			<artifactId>org.springframework.web.portlet</artifactId>
