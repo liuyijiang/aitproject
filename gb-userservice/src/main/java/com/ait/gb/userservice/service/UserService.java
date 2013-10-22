@@ -16,6 +16,7 @@ public class UserService {
 //		u.setId("dsa");
 //		u.setName("dsad");
 		System.out.println(service);
+		service.persist(null);
 	}
 	
 }
