@@ -2,23 +2,30 @@ package com.ait.gb.entity;
 
 import org.springframework.data.annotation.Id;
 
-public class UserEntity {
-  
+public class ChildEntity {
+
 	@Id
 	private String id;
+	private String parentId;
 	private String name;
-	private String email;
-	private String password;
+	private String address;
+	private String info;
 	private String imageMax;
 	private String imageSmall;
 	private String createTime;
 	private int random;
-	
+	private int age;
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getParentId() {
+		return parentId;
+	}
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
 	}
 	public String getName() {
 		return name;
@@ -26,17 +33,17 @@ public class UserEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getEmail() {
-		return email;
+	public String getAddress() {
+		return address;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public String getPassword() {
-		return password;
+	public String getInfo() {
+		return info;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setInfo(String info) {
+		this.info = info;
 	}
 	public String getImageMax() {
 		return imageMax;
@@ -62,7 +69,12 @@ public class UserEntity {
 	public void setRandom(int random) {
 		this.random = random;
 	}
-	
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
 	
 	
 	
