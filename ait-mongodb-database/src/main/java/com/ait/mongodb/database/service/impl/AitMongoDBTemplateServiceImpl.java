@@ -3,6 +3,7 @@ package com.ait.mongodb.database.service.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Service;
 
@@ -13,18 +14,13 @@ public class AitMongoDBTemplateServiceImpl implements AitMongoDBTemplateService 
   
 	public static final Logger logger = LoggerFactory.getLogger(AitMongoDBTemplateServiceImpl.class); 
 	
-	@Autowired
+	@Autowired(required=true)
 	private MongoOperations mog; 
 	
 	@Override
 	public Object persist(Object obj) {
 		try{
-			mog.save(obj);
-			logger.trace("======AitMongoDBTemplateServiceImpl1111trace");  
-			 logger.debug("======2AitMongoDBTemplateServiceImpl22debug");  
-			 logger.info("======33AitMongoDBTemplateServiceImpl3info");  
-			 logger.warn("======44AitMongoDBTemplateServiceImpl4warn");  
-			 logger.error("======5AitMongoDBTemplateServiceImpl55error");
+			//mog.save(obj);
 		}catch(Exception e){
 			logger.error(e.getMessage());
 		}
