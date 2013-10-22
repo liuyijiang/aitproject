@@ -15,7 +15,7 @@
   </properties>
 
   <dependencies>
-       
+        
        <dependency>
 			<groupId>ati</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -36,9 +36,28 @@
    
       <dependency>
 			<groupId>ati</groupId>
+			<artifactId>org.springframework.context.support</artifactId>
+			<version>3.1.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ati</groupId>
+			<artifactId>org.springframework.context</artifactId>
+			<version>3.1.0.RELEASE</version>
+		</dependency>
+   
+      <dependency>
+			<groupId>ati</groupId>
 			<artifactId>org.springframework.beans</artifactId>
 			<version>3.1.0.RELEASE</version>
 		</dependency>
+		
+				<dependency>
+			<groupId>ati</groupId>
+			<artifactId>org.springframework.expression</artifactId>
+			<version>3.1.0.RELEASE</version>
+		</dependency>
+		
 		
 		   <dependency>
 			<groupId>ati</groupId>
@@ -52,7 +71,7 @@
 			<version>3.1.0.RELEASE</version>
 		</dependency>
 		
-		<dependency>
+		<dependency> 
 			<groupId>ati</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
 			<version>1.0.1.RELEASE</version>
@@ -63,6 +82,13 @@
 			<groupId>ati</groupId>
 			<artifactId>spring-data-commons-core</artifactId>
 			<version>1.2.1.RELEASE</version>
+		</dependency>
+   
+   
+       <dependency> 
+			<groupId>ati</groupId>
+			<artifactId>mongo</artifactId>
+			<version>2.7.3</version>
 		</dependency>
    
   </dependencies>
