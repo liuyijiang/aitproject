@@ -26,7 +26,7 @@ public class UserServiceController {
 		 logger.info("======333info");  
 		 logger.warn("======444warn");  
 		 logger.error("======555error");
-		 userService.test();
+		 userService.testquery();
 		return new ModelAndView("index.jsp");
 	}
 	
