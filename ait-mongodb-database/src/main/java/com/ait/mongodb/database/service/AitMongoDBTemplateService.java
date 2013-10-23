@@ -14,7 +14,7 @@ public interface AitMongoDBTemplateService {
 	
 	public boolean incUpdate(UpdateBean bean, Class<?> clzss);
 	
-	public <T> Object findOne(QueryBean bean, Class<T> clzss);
+	public <T> T findOne(QueryBean bean, Class<T> clzss);
 	
 	public <T> List<T> find(QueryBean bean, PageBean page, Class<T> clzss);
 	

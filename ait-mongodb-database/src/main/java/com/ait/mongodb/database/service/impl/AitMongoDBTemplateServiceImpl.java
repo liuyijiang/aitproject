@@ -104,12 +104,25 @@ public class AitMongoDBTemplateServiceImpl implements AitMongoDBTemplateService 
 	 * 查询一个
 	 */
 	@Override
-	public <T> Object findOne(QueryBean bean, Class<T> clzss) {
-		Object obj = null;
+	public <T> T findOne(QueryBean bean, Class<T> clzss) {
+		Criteria c = null;
+		T obj = null;
 		try {
-			Criteria c = Criteria.where("id").is(bean.getId());
-			for (String key : bean.getQuery().keySet()) {
-				c.and(key).is(bean.getQuery().get(key));
+			if(bean.getId() != null){
+			   c = Criteria.where("id").is(bean.getId());
+			   for (String key : bean.getQuery().keySet()) {
+				 c.and(key).is(bean.getQuery().get(key));
+			   }
+			}else{
+				boolean isFrist = true;
+				for (String key : bean.getQuery().keySet()) {
+					if(isFrist){
+						c = Criteria.where(key).is(bean.getQuery().get(key));
+						isFrist = false;
+					}else{
+						c.and(key).is(bean.getQuery().get(key));
+					}
+				}
 			}
 			Query q = new Query(c);
 			obj = mog.findOne(q, clzss);
