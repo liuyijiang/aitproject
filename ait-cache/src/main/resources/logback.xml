@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>   
+   
+       <appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <file>/data/log/ait-cache.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/data/log/ait-cache.log.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+   
+   <!-- 控制台打印 -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">   
+    <!-- encoder 默认配置为PatternLayoutEncoder -->   
+    <encoder>   
+      <pattern>[%relative]%-5d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>   
+    </encoder>   
+  </appender>   
+   
+   <!-- 这里level 设为debug 则程序中logger.debug 以后的都可以打印出来 -->
+  <!-- 参照TestSlf4.class -->
+  <root level="DEBUG">   
+    <appender-ref ref="info" />           
+    <appender-ref ref="STDOUT" />   
+  </root>     
+  
+ </configuration> 
