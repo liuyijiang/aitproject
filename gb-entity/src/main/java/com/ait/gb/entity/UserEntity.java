@@ -12,6 +12,7 @@ public class UserEntity {
 	private String imageMax;
 	private String imageSmall;
 	private String createTime;
+	private String childNumber;
 	private int random;
 	
 	public String getId() {
@@ -61,6 +62,12 @@ public class UserEntity {
 	}
 	public void setRandom(int random) {
 		this.random = random;
+	}
+	public String getChildNumber() {
+		return childNumber;
+	}
+	public void setChildNumber(String childNumber) {
+		this.childNumber = childNumber;
 	}
 	
 	
