@@ -14,6 +14,7 @@ public class RecordEntity {
 	private String rewardType;
 	private String comment;
 	private int rewardNumber;
+	private String recordType;//优秀 良好 合格
 	private String from;
 	
 	public String getId() {
@@ -75,6 +76,12 @@ public class RecordEntity {
 	}
 	public void setFrom(String from) {
 		this.from = from;
+	}
+	public String getRecordType() {
+		return recordType;
+	}
+	public void setRecordType(String recordType) {
+		this.recordType = recordType;
 	}
 	
 	

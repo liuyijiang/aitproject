@@ -14,7 +14,8 @@ public class ChildEntity {
 	private String imageSmall;
 	private String createTime;
 	private int random;
-	private int age;
+	private long score;
+	
 	public String getId() {
 		return id;
 	}
@@ -69,13 +70,12 @@ public class ChildEntity {
 	public void setRandom(int random) {
 		this.random = random;
 	}
-	public int getAge() {
-		return age;
+	public long getScore() {
+		return score;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setScore(long score) {
+		this.score = score;
 	}
-	
 	
 	
 }
