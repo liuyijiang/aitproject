@@ -5,9 +5,12 @@
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="assets/css/bootstrap.css">
-<link href="assets/css/font-awesome.css" rel="stylesheet">
-<script type="text/javascript" charset="utf-8" src="js/phonegap-1.0.0.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="assets/css/font-awesome.css" >
+<script type="text/javascript" src="assets/js/phonegap-1.0.0.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/gb_js/gb_global.js"></script>
+<script type="text/javascript" src="assets/js/jquery-1.7.2.js"></script>
+
 </head>
 <body style="background-color:#007c84; font-family:Microsoft YaHei;">
    
@@ -18,31 +21,87 @@
   </div>
     
   <div style="width:100%;padding:30px;position:absolute;left;0;bottom:0;">
+  
+    <div class="input-group">
+      <span class="input-group-addon" style="border-radius:0px;background-color:#004c54;border-color:#004c54;">
+         <i class="icon-user"></i>
+      </span>
+      <input id="gb_register_name" type="text" class="form-control" placeholder="妈咪的昵称" style="border-radius: 0px;">
+    </div>
+    <div style="width:100%;height:10px;"></div>
+  
     <div class="input-group" style="border-radius: 0px;">
       <span class="input-group-addon" style="border-radius:0px;background-color:#004c54;border-color:#004c54;">
          <i class="icon-envelope"></i>
       </span>
-      <input type="text" class="form-control" placeholder="妈咪的邮箱" style="border-radius: 0px;">
+      <input id="gb_register_email" type="text" class="form-control" placeholder="妈咪的邮箱" style="border-radius: 0px;">
     </div>
     <div style="width:100%;height:10px;"></div>
+    
     <div class="input-group">
       <span class="input-group-addon" style="border-radius:0px;background-color:#004c54;border-color:#004c54;">
          <i class="icon-key"></i>
       </span>
-      <input type="text" class="form-control" placeholder="妈咪的密码" style="border-radius: 0px;">
-    </div>
-     <div style="width:100%;height:10px;"></div>
-     <div class="input-group">
-      <span class="input-group-addon" style="border-radius:0px;background-color:#004c54;border-color:#004c54;">
-         <i class="icon-key"></i>
-      </span>
-      <input type="text" class="form-control" placeholder="确认妈咪的密码" style="border-radius: 0px;">
+      <input id="gb_register_password" type="text" class="form-control" placeholder="妈咪的密码" style="border-radius: 0px;">
     </div>
     <div style="width:100%;height:10px;"></div>
-    <button type="button" class="btn-gb btn-primary btn-block" style="border-radius:0px;background-color:#004c54;border-color:#004c54;">注册</button>
+    
+    <button type="button" onclick="registerfunction()" id="gb_register_reg_btn"  class="btn-gb btn-primary btn-block" style="border-radius:0px;background-color:#004c54;border-color:#004c54;">注册</button>
    <br/><br/><br /><br />
   </div>  
 
+  <script type="text/javascript">
+  
+  function registerfunction(){
+        var password = $("#gb_register_password").val();
+        var email = $("#gb_register_email").val();
+        var name = $("#gb_register_name").val();
+        if(true){
+        //if(isEmail(email) && isName(name) && isPassword(password)){
+          var datas = {"username":name,"email":email,"password":password};
+          $.ajax({
+            url : servicepath + "userRegist",
+            type : "POST",
+            cache : false,
+            async : false,
+            contentType: 'application/json',
+            data: JSON.stringify(datas),
+            dataType : "json",
+            success : function(item) {
+              alert(item.code);
+            }
+         });
+       }
+    }
+  
+  function isName(parm){
+		if(parm != ""){
+			return true;
+		}else{
+		    alert("昵称不能为空");
+			return false;
+		}
+	}
+	
+   function isPassword(parm){
+		if(parm != ""){
+			return true;
+		}else{
+		    alert("密码不能为空");
+			return false;
+		}
+	}
+	
+	 function isEmail(strEmail) {
+		if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) != -1){
+			return true;
+		}else{
+			alert("邮箱格式有误");
+			return false;
+		}
+	} 
+  
+  </script>
 
   </body>
 </html>

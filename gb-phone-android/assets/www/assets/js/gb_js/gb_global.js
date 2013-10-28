@@ -1,0 +1,1 @@
+var servicepath = "http://192.168.1.12:3080/gb-userservice/";
